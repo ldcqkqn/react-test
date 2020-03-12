@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 
 class TOC extends Component {
     render(){
+      var lists = [];
+      var data = this.props.data;
+      var i = 0;
+      while(i < data.length){
+        lists.push(<li key={data[i].id}><a href = {"/content/"+data[i].id}>{data[i].title}</a></li>);
+        i++;
+      }
       return(
         <nav>
           <ul>
-            <li><a href = 'https://www.naver.com'>Naver</a></li>
-            <li><a href = 'https://www.adventurer.co.kr'>승부사 온라인</a></li>
-            <li><a href = 'https://www.hanmail.net'>Daum</a></li>
+              {lists}
           </ul>
         </nav>
       );
