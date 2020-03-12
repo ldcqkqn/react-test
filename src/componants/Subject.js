@@ -4,8 +4,8 @@ class Subject extends Component {
     render(){
       return(
         <header>
-          <h1>DongChan</h1>
-          컴포넌트 만들기 1 
+          <h1>{this.props.title}</h1>
+          {this.props.sub} 
         </header>
       );
     }

@@ -10,9 +10,10 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <Subject></Subject>
+        <Subject title="WEB" sub="study"></Subject>
+        <Subject title="열심히말고" sub="잘하자"></Subject>
         <TOC></TOC>
-        <Content></Content>
+        <Content title="마지노선" ldc="인복이 많군"></Content>
       </div>
     );
   }
