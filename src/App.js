@@ -10,7 +10,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      mode : 'read',
       subject : {title : "REACT", sub : "CHEER UP"},
+      welcome : {title : 'Welcome', add : 'good'},
       contents:[
         {id: 1, title: 'naver', add: 'https://www.naver.com' },
         {id: 2, title: 'adventurer', add: 'https://www.adventurer.co.kr' },
@@ -19,15 +21,23 @@ class App extends Component {
     }
   }
   render(){
+    console.log('app_rander');
+    var _title, _add = null;
+    if(this.state.mode === 'welcome'){
+      _title = this.state.welcome.title;
+      _add = this.state.welcome.add;
+    } else if(this.state.mode === 'read'){
+      _title = this.state.contents[0].title;
+      _add = this.state.contents[0].add;
+    }
     return (
       <div className="App">
         <Subject 
           title={this.state.subject.title}
           sub={this.state.subject.sub}>
         </Subject>
-        <Subject title="열심히말고" sub="잘하자"></Subject>
         <TOC data={this.state.contents}></TOC>
-        <Content title="마지노선" ldc="인복이 많군"></Content>
+        <Content title={_title} ldc={_add}></Content>
       </div>
     );
   }
