@@ -32,10 +32,20 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Subject 
+        {/* <Subject 
           title={this.state.subject.title}
           sub={this.state.subject.sub}>
-        </Subject>
+        </Subject> */}
+        <header>
+          <h1><a href = "/" onClick = {function(e){
+            e.preventDefault();
+            // this.state.mode = 'welcome'; 이렇게 쓰면 this의 값을 받을 수 없음
+            this.setState({
+              mode : 'welcome'
+            });
+          }.bind(this)}>{this.state.subject.title}</a></h1>
+          {this.state.subject.sub}
+        </header>
         <TOC data={this.state.contents}></TOC>
         <Content title={_title} ldc={_add}></Content>
       </div>
