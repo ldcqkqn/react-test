@@ -1,0 +1,9 @@
+html{
+    background-color: rgb(123, 201, 201);
+}
+li{
+    list-style: none;
+}
+TOC{
+    display: inline-block;
+}
